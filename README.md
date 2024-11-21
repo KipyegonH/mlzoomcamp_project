@@ -69,11 +69,11 @@ ML PROJECT/
 ## Setup and Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/username/credit-card-default.git
+   git clone https://github.com/KipyegonH/mlzoomcamp_project.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd credit-card-default
+   cd 'ML PROJECT'
    ```
 3. Install dependencies:
    ```bash
@@ -81,8 +81,8 @@ ML PROJECT/
    ```
 4. Run the project in Docker (optional):
    ```bash
-   docker build -t credit-default .
-   docker run -p 5000:5000 credit-default
+   docker build -t 'ML PROJECT' .
+   docker run -p 9696:9696 'ML PROJECT'
    ```
 
 ## Usage
