@@ -56,7 +56,7 @@ credit-card-default/
 │
 ├── notebook.ipynb          # Jupyter notebook for EDA, model selection, and feature engineering
 ├── Dockerfile              # Dockerfile for running the service
-├── requirements.txt        # Python dependencies
+├── requirements.txt       # Python dependencies
 ├── README.md               # Project documentation
 └── Data_Dictionary.md      # Data dictionary
 ```
