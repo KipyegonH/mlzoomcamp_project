@@ -10,6 +10,7 @@ COPY ["Pipfile", "Pipfile.lock", "./"]
 RUN pipenv install --deploy --system
 COPY ["predict.py","xgb_model.pkl", "dv.pkl", "./"]
 
-EXPOSE 5000
+EXPOSE 9696
+
 
 CMD ["python", "predict.py"]

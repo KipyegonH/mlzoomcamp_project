@@ -3,6 +3,11 @@
 
 This project aims to predict the likelihood of a client defaulting on their credit card payment next month using machine learning models. The project involves data cleaning, exploratory data analysis (EDA), feature engineering, and model training.
 
+## Dataset
+[Default of Credit Card Clients Dataset](https://archive.ics.uci.edu/static/public/350/default+of+credit+card+clients.zip)
+
+
+
 ## Table of Contents
 1. [Problem Definition](#problem-definition)
 2. [Project Overview](#project-overview)
@@ -88,3 +93,6 @@ credit-card-default/
 
 ## Contributing
 Contributions are welcome! Feel free to submit a pull request or report issues.
+
+
+[def]: https://archive.ics.uci.edu/static/public/350/default+of+credit+card+clients.zip
