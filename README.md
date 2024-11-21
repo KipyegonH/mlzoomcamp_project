@@ -45,20 +45,25 @@ For detailed information, refer to the [Data Dictionary](./Data_Dictionary.md).
 
 ## Project Structure
 ```
-credit-card-default/
+ML PROJECT/
 │
-├── data/                   # Contains the dataset
+├── data/                      # Contains the dataset
 │   └── default of credit card clients.xls
 │
-├── src/
-│   ├── train.py            # Script for training and saving the model
-│   ├── predict.py          # Script for serving predictions
+├── environment_project/       # Folder with your model, scripts, and dependencies
+│   ├── Pipfile                # Pipenv file for managing dependencies
+│   ├── Pipfile.lock           # Lock file for consistent environments
+│   ├── Dockerfile             # Dockerfile for running the service
+│   ├── train.py               # Script for training and saving the model
+│   ├── predict.py             # Script for serving predictions
+│   ├── xgb_model.pkl          # Trained XGBoost model
+│   ├── dv.pkl                 # DictVectorizer model
+│   └── requirements.txt       # List of Python dependencies
 │
-├── notebook.ipynb          # Jupyter notebook for EDA, model selection, and feature engineering
-├── Dockerfile              # Dockerfile for running the service
-├── requirements.txt       # Python dependencies
-├── README.md               # Project documentation
-└── Data_Dictionary.md      # Data dictionary
+├── data_dictionary.md         # Data dictionary
+├── notebook.ipynb             # Jupyter notebook for EDA, model selection, and feature engineering
+├── README.md                  # Project documentation
+
 ```
 
 ## Setup and Installation
