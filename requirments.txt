@@ -1,0 +1,9 @@
+pandas
+numpy
+xgboost
+scikit-learn
+matplotlib
+seaborn
+flask    # If you're serving predictions via Flask
+docker   # If you're using Docker for deployment
+pytest   # If you're running tests
