@@ -88,13 +88,80 @@ ML PROJECT/
 ## Usage
 - **Train the model**:
   ```bash
-  python src/train.py
+  train.py
   ```
 - **Serve predictions**:
   ```bash
-  python src/predict.py
+  predict.py
   ```
-- Access the web service at `http://localhost:5000`.
+- Access the web service at `http://localhost:9696`.
+
+## Deployment
+This project can be deployed locally using Docker or to the cloud using AWS Elastic Beanstalk. Below are the detailed steps for both methods:
+
+Deploy Locally with Docker
+Step 1: Install Docker
+Ensure Docker is installed on your system. If not, refer to the Docker installation guide.
+
+Step 2: Build the Docker Image
+Run the following command to create a Docker image for the project:
+
+bash
+Copy code
+docker build -t credit-card-default .
+Step 3: Run the Docker Container
+Start the Docker container and expose it on port 9696:
+
+bash
+Copy code
+docker run -p 9696:9696 credit-card-default
+Step 4: Access the Service
+The service will be available at http://localhost:9696.
+
+Deploy to AWS Elastic Beanstalk
+Step 1: Install AWS Elastic Beanstalk CLI
+Install the Elastic Beanstalk CLI by following the AWS EB CLI installation guide.
+
+Step 2: Initialize Elastic Beanstalk
+In the project directory, run:
+
+bash
+Copy code
+eb init
+Choose your AWS region.
+Enter an application name (e.g., credit-card-default).
+Select Docker as the platform.
+Set up SSH access if required for troubleshooting.
+Step 3: Create an Elastic Beanstalk Environment
+Create a new environment to host the application:
+
+bash
+Copy code
+eb create credit-card-default-env
+This command sets up an Elastic Beanstalk environment.
+
+Step 4: Deploy the Application
+Use the following command to deploy the project to Elastic Beanstalk:
+
+bash
+Copy code
+eb deploy
+Step 5: Access the Application
+Once deployed, Elastic Beanstalk will provide a URL to access your application. You can also use:
+
+bash
+Copy code
+eb open
+Step 6: Monitor and Manage
+To view logs:
+bash
+Copy code
+eb logs
+To terminate the environment when no longer needed:
+bash
+Copy code
+eb terminate credit-card-default-env
+By following these steps, you can successfully deploy and manage the application either locally or on the cloud.
 
 ## Contributing
 Contributions are welcome! Feel free to submit a pull request or report issues.
