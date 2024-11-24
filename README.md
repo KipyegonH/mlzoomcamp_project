@@ -6,8 +6,6 @@ This project aims to predict the likelihood of a client defaulting on their cred
 ## Dataset
 [Default of Credit Card Clients Dataset](https://archive.ics.uci.edu/static/public/350/default+of+credit+card+clients.zip)
 
-
-
 ## Table of Contents
 1. [Problem Definition](#problem-definition)
 2. [Project Overview](#project-overview)
@@ -15,8 +13,9 @@ This project aims to predict the likelihood of a client defaulting on their cred
 4. [Project Structure](#project-structure)
 5. [Setup and Installation](#setup-and-installation)
 6. [Usage](#usage)
-7. [Contributing](#contributing)
-8. [License](#license)
+7. [Deployment](#deployment)
+8. [Contributing](#contributing)
+9. [License](#license)
 
 ## Problem Definition
 
@@ -63,7 +62,6 @@ ML PROJECT/
 ├── data_dictionary.md         # Data dictionary
 ├── notebook.ipynb             # Jupyter notebook for EDA, model selection, and feature engineering
 ├── README.md                  # Project documentation
-
 ```
 
 ## Setup and Installation
@@ -81,90 +79,86 @@ ML PROJECT/
    ```
 4. Run the project in Docker (optional):
    ```bash
-   docker build -t 'ML PROJECT' .
-   docker run -p 9696:9696 'ML PROJECT'
+   docker build -t credit-card-default .
+   docker run -p 9696:9696 credit-card-default
    ```
 
 ## Usage
 - **Train the model**:
   ```bash
-  train.py
+  python train.py
   ```
 - **Serve predictions**:
   ```bash
-  predict.py
+  python predict.py
   ```
 - Access the web service at `http://localhost:9696`.
 
 ## Deployment
 This project can be deployed locally using Docker or to the cloud using AWS Elastic Beanstalk. Below are the detailed steps for both methods:
 
-Deploy Locally with Docker
-Step 1: Install Docker
-Ensure Docker is installed on your system. If not, refer to the Docker installation guide.
+### Deploy Locally with Docker
 
-Step 2: Build the Docker Image
+#### Step 1: Install Docker
+Ensure Docker is installed on your system. If not, refer to the [Docker installation guide](https://docs.docker.com/get-docker/).
+
+#### Step 2: Build the Docker Image
 Run the following command to create a Docker image for the project:
-
-bash
-Copy code
+```bash
 docker build -t credit-card-default .
-Step 3: Run the Docker Container
-Start the Docker container and expose it on port 9696:
+```
 
-bash
-Copy code
+#### Step 3: Run the Docker Container
+Start the Docker container and expose it on port `9696`:
+```bash
 docker run -p 9696:9696 credit-card-default
-Step 4: Access the Service
-The service will be available at http://localhost:9696.
+```
 
-Deploy to AWS Elastic Beanstalk
-Step 1: Install AWS Elastic Beanstalk CLI
-Install the Elastic Beanstalk CLI by following the AWS EB CLI installation guide.
+#### Step 4: Access the Service
+The service will be available at [http://localhost:9696](http://localhost:9696).
 
-Step 2: Initialize Elastic Beanstalk
+### Deploy to AWS Elastic Beanstalk
+
+#### Step 1: Install AWS Elastic Beanstalk CLI
+Install the Elastic Beanstalk CLI by following the [AWS EB CLI installation guide](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html).
+
+#### Step 2: Initialize Elastic Beanstalk
 In the project directory, run:
-
-bash
-Copy code
+```bash
 eb init
-Choose your AWS region.
-Enter an application name (e.g., credit-card-default).
-Select Docker as the platform.
-Set up SSH access if required for troubleshooting.
-Step 3: Create an Elastic Beanstalk Environment
+```
+- Choose your AWS region.
+- Enter an application name (e.g., `credit-card-default`).
+- Select `Docker` as the platform.
+- Set up SSH access if required for troubleshooting.
+
+#### Step 3: Create an Elastic Beanstalk Environment
 Create a new environment to host the application:
-
-bash
-Copy code
+```bash
 eb create credit-card-default-env
-This command sets up an Elastic Beanstalk environment.
+```
 
-Step 4: Deploy the Application
+#### Step 4: Deploy the Application
 Use the following command to deploy the project to Elastic Beanstalk:
-
-bash
-Copy code
+```bash
 eb deploy
-Step 5: Access the Application
-Once deployed, Elastic Beanstalk will provide a URL to access your application. You can also use:
+```
 
-bash
-Copy code
+#### Step 5: Access the Application
+Once deployed, Elastic Beanstalk will provide a URL to access your application. You can also use:
+```bash
 eb open
-Step 6: Monitor and Manage
-To view logs:
-bash
-Copy code
-eb logs
-To terminate the environment when no longer needed:
-bash
-Copy code
-eb terminate credit-card-default-env
-By following these steps, you can successfully deploy and manage the application either locally or on the cloud.
+```
+
+#### Step 6: Monitor and Manage
+- To view logs:
+  ```bash
+  eb logs
+  ```
+- To terminate the environment when no longer needed:
+  ```bash
+  eb terminate credit-card-default-env
+  ```
 
 ## Contributing
 Contributions are welcome! Feel free to submit a pull request or report issues.
-
-
-[def]: https://archive.ics.uci.edu/static/public/350/default+of+credit+card+clients.zip
